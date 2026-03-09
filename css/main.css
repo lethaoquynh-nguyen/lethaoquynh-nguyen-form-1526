@@ -1,0 +1,240 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --card: #ffffff;
+  --input-bg: #f3f3f3;
+  --input-focus: #e6e7ff;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+/* Layout */
+.wrap {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.form {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* Card */
+.fieldset {
+  margin: 0;
+  border: 0;
+  border-radius: 1.125rem;
+  background: var(--card);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  padding: 4.75rem 1rem 1.25rem;
+
+}
+
+/* Title */
+.legend {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  border: 0;
+}
+
+.legend__box {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+/* Form grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  display: block;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.field input,
+.field textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  color: #000;
+  background: var(--input-bg);
+  border: 0;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+  background: var(--input-focus);
+}
+
+.field textarea {
+  resize: none;
+  min-height: 7.5rem;
+}
+
+/* Button */
+.actions {
+  margin-top: 0.25rem;
+}
+
+#submit-button {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  padding: 0.85rem 1.2rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#submit-button:hover {
+  background: #222;
+}
+
+/* Mobile: up to 25rem */
+@media (max-width: 25rem) {
+  .wrap {
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .fieldset {
+    padding: 4rem 1rem 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .legend__box {
+    top: 0.9rem;
+    left: 1rem;
+    font-size: 1.35rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #submit-button {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 25.0625rem) and (max-width: 39.999rem) {
+  .wrap {
+    padding: 1.5rem;
+    align-items: center;
+  }
+
+  .fieldset {
+    padding: 4.25rem 1.5rem 1.5rem;
+  }
+
+  .legend__box {
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+    row-gap: 1rem;
+  }
+
+  #submit-button {
+    width: 10.5rem;
+  }
+}
+
+/* Desktop: 40rem and up */
+@media (min-width: 40rem) {
+  .wrap {
+    padding: 2rem;
+    align-items: center;
+  }
+
+  .fieldset {
+    padding: 4.5rem 2rem 2rem;
+  }
+
+  .legend__box {
+    top: 1rem;
+    left: 2rem;
+    font-size: 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 1rem;
+  }
+
+  #submit-button {
+    width: 10.5rem;
+  }
+}
