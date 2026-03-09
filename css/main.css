@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-:root {
+: root {
   --card: #ffffff;
   --input-bg: #f3f3f3;
   --input-focus: #e6e7ff;
@@ -38,7 +38,7 @@ body::before {
 /* Layout */
 .wrap {
   min-height: 100vh;
-  padding: 2rem 1rem;
+  padding: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@ body::before {
   background: var(--card);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   position: relative;
-  padding: 4.75rem 1rem 1.25rem;
+  padding: 4.5rem 1rem 1.25rem;
 }
 
 /* Title */
@@ -78,7 +78,6 @@ body::before {
   margin: 0;
   padding: 0;
   background: transparent;
-  border-radius: 0;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.05;
@@ -119,8 +118,8 @@ body::before {
   outline: none;
 }
 
-.field input:focus,
-.field textarea:focus {
+.field input: focus,
+.field textarea: focus {
   background: var(--input-focus);
 }
 
@@ -147,12 +146,12 @@ body::before {
   transition: background 0.2s ease;
 }
 
-#submit-button:hover {
+#submit-button: hover {
   background: #222;
 }
 
-/* Mobile */
-@media (max-width: 47.999rem) {
+/* Smart-phone: up to 25rem */
+@media (max-width: 25rem) {
   .wrap {
     padding: 1rem;
   }
@@ -177,10 +176,10 @@ body::before {
   }
 }
 
-/* Tablet and desktop */
-@media (min-width: 48rem) {
+/* Tablet: more than 25rem up to 40rem */
+@media (min-width: 25.0625rem) and (max-width: 39.999rem) {
   .wrap {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .fieldset {
@@ -204,10 +203,10 @@ body::before {
   }
 }
 
-/* Desktop */
-@media (min-width: 64rem) {
+/* Desktop: 40rem and up */
+@media (min-width: 40rem) {
   .wrap {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .fieldset {
@@ -215,11 +214,18 @@ body::before {
   }
 
   .legend__box {
+    top: 1rem;
     left: 2rem;
     font-size: 2rem;
   }
 
   .grid {
+    grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
+    row-gap: 1rem;
+  }
+
+  #submit-button {
+    width: 10.5rem;
   }
 }
