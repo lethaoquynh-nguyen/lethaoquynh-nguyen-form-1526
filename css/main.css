@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-:root {
+: root {
   --card: #ffffff;
   --input-bg: #f3f3f3;
   --input-focus: #e6e7ff;
@@ -121,8 +121,8 @@ body::before {
   outline: none;
 }
 
-.field input:focus,
-.field textarea:focus {
+.field input: focus,
+.field textarea: focus {
   background: var(--input-focus);
 }
 
@@ -149,15 +149,25 @@ body::before {
   transition: background 0.2s ease;
 }
 
-#submit-button:hover {
+#submit-button: hover {
   background: #222;
 }
 
-/* Mobile: up to 25rem */
-@media (max-width: 25rem) {
+/* Mobile default: all phones = 1 column */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#submit-button {
+  width: 100%;
+}
+
+/* Small mobile adjustments */
+@media (max-width: 30rem) {
   .wrap {
     padding: 1rem;
-    align-items: center;
   }
 
   .fieldset {
@@ -170,19 +180,10 @@ body::before {
     left: 1rem;
     font-size: 1.35rem;
   }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  #submit-button {
-    width: 100%;
-  }
 }
 
-/* Tablet */
-@media (min-width: 25.0625rem) and (max-width: 39.999rem) {
+/* Tablet and up = 2 columns */
+@media (min-width: 48rem) {
   .wrap {
     padding: 1.5rem;
     align-items: center;
@@ -199,7 +200,6 @@ body::before {
   }
 
   .grid {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1.25rem;
     row-gap: 1rem;
@@ -210,11 +210,10 @@ body::before {
   }
 }
 
-/* Desktop: 40rem and up */
-@media (min-width: 40rem) {
+/* Desktop */
+@media (min-width: 64rem) {
   .wrap {
     padding: 2rem;
-    align-items: center;
   }
 
   .fieldset {
@@ -222,19 +221,11 @@ body::before {
   }
 
   .legend__box {
-    top: 1rem;
     left: 2rem;
     font-size: 2rem;
   }
 
   .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
-    row-gap: 1rem;
-  }
-
-  #submit-button {
-    width: 10.5rem;
   }
 }
