@@ -11,8 +11,8 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function handleFormValidation() {
     // START WITH INITIALLY 2 "EMPTY BUCKETS" (DATA/ERRORS)
     const data = {};
-    const errors = []; // (guide-lines)
-    const errorsObj = {}; // (to match screenshot console format)
+    const errors = []; //
+    const errorsObj = {}; // 
 
     // FULL NAME
     const fullname = fullNameInput.value.trim();
@@ -45,7 +45,7 @@ function handleFormValidation() {
     if (message !== '') {
         data.message = message;
     } else {
-        const msg = 'Message name is missing'; // match screenshot text
+        const msg = 'Message is missing';
         errors.push(msg);
         errorsObj.msg = msg;
     }
@@ -53,7 +53,6 @@ function handleFormValidation() {
     // FEEDBACK/ERRORS
     if (errors.length > 0) {
         console.log('ERRORS', errorsObj);
-        console.log(errors);
     } else {
         console.log('COLLECTED DATA', data);
 
